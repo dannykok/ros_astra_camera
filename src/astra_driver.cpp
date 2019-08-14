@@ -220,6 +220,9 @@ void AstraDriver::advertiseROSTopics()
   color_name = "rgb_"   + serial_number;
   ir_name  = "depth_" + serial_number;
 
+  ROS_INFO("using color name=%s",color_name.c_str());
+  ROS_INFO("using IR name=%s",ir_name.c_str());
+		   
   // Load the saved calibrations, if they exist
   color_info_manager_ = boost::make_shared<camera_info_manager::CameraInfoManager>(color_nh, color_name, color_info_url_);
   ir_info_manager_  = boost::make_shared<camera_info_manager::CameraInfoManager>(ir_nh,  ir_name,  ir_info_url_);
